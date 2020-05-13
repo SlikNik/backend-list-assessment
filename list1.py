@@ -5,7 +5,7 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Nikal Morgan"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
