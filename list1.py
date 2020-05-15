@@ -6,6 +6,13 @@ Kenzie assignment: List1
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
 __author__ = "Nikal Morgan"
+"""
+Resources:
+insert()
+https://stackoverflow.com/questions/17911091/append-integer-to-beginning-of-list-in-python
+key function
+https://www.w3resource.com/python-exercises/list/python-data-type-list-exercise-6.php
+"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -26,8 +33,18 @@ __author__ = "Nikal Morgan"
 
 
 def match_ends(words):
-    # your code here
-    return
+    count = 0
+    for word in words:
+        if len(word) >= 2:
+            first = word[0]
+            last = word[len(word)-1]
+            if first == last:
+                count+=1
+            else:
+                continue
+        else:
+            continue
+    return count
 
 
 # B. front_x
@@ -42,8 +59,14 @@ def match_ends(words):
 
 
 def front_x(words):
-    # your code here
-    return
+    words.sort()
+    secondToLast = words[len(words)-2]
+    last = words[len(words)-1]
+    words.insert(0, secondToLast)
+    words.insert(1, last)
+    words.pop()
+    words.pop()
+    return words
 
 
 # C. sort_last
@@ -54,10 +77,10 @@ def front_x(words):
 #   [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 
-
+def last(n): 
+    return n[-1]
 def sort_last(tuples):
-    # your code here
-    return
+    return sorted(tuples, key=last)
 
 
 # Provided simple test() function used in main() to print

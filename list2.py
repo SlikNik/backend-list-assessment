@@ -6,6 +6,10 @@ Kenzie assignment: List2
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
 __author__ = "Nikal Morgan"
+"""
+Resources:
+https://stackoverflow.com/questions/2488651/trouble-with-this-python-newbie-exercise-using-lists-and-finding-if-two-adjacen/2489003
+"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,8 +32,17 @@ __author__ = "Nikal Morgan"
 
 
 def remove_adjacent(nums):
-    # your code here
-    return
+    new_list = []
+    currentNumber = None
+    if len(nums) > 0:
+        for number in nums:
+            if number != currentNumber:
+                new_list.append(number)
+                currentNumber = number
+        return new_list
+    else:
+        return []
+
 
 
 # E. linear_merge
@@ -44,8 +57,9 @@ def remove_adjacent(nums):
 
 
 def linear_merge(list1, list2):
-    # your code here
-    return
+    mergedList = list1 + list2
+    mergedList.sort()
+    return mergedList
 
 
 # Provided simple test() function used in main() to print
